@@ -1,0 +1,122 @@
+.botin__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  margin-bottom: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.botin__cr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.botin__cr strong {
+  font-family: var(--fuente-titulo);
+  font-size: 2.2rem;
+  color: var(--dorado-claro);
+}
+
+.botin__panel input[type="range"] {
+  width: 100%;
+  accent-color: var(--dorado);
+}
+
+.botin__tipo {
+  color: var(--texto-suave);
+}
+
+.botin__boton {
+  padding: 14px;
+  background: linear-gradient(180deg, #e8bd62, #b98a2e);
+  border: none;
+  border-radius: var(--radio);
+  color: #1a1208;
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.botin__boton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.botin__mensaje {
+  text-align: center;
+  color: var(--texto-suave);
+  padding: 30px 0;
+}
+
+.botin__mensaje--error {
+  color: #ff6b73;
+}
+
+.botin__resultado h2 {
+  font-size: 1.2rem;
+  margin: 8px 0 12px;
+}
+
+/* ---------- Monedas ---------- */
+.botin__monedas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.moneda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--dorado);
+  border-radius: var(--radio);
+}
+
+.moneda__icono {
+  font-size: 1.6rem;
+}
+
+.moneda strong {
+  font-size: 1.2rem;
+  color: var(--dorado-claro);
+}
+
+.moneda__nombre {
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.moneda--vacia {
+  border-color: var(--borde);
+  opacity: 0.45;
+}
+
+/* ---------- Objetos ---------- */
+.botin__objetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+/* Color según rareza */
+.stat--rareza-common .stat__valor { color: #cfcfcf; }
+.stat--rareza-uncommon .stat__valor { color: #6fd36f; }
+.stat--rareza-rare .stat__valor { color: #5aa9ff; }
+.stat--rareza-very-rare .stat__valor { color: #b97aff; }
+.stat--rareza-legendary .stat__valor { color: #ffa23a; }
+
+/* Los textos largos (como el tipo) deben partirse sin desbordar */
+.tarjeta--compacta .stat__valor {
+  font-size: 0.95rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}

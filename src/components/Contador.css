@@ -1,0 +1,31 @@
+.contador {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.contador__etiqueta {
+  color: var(--texto-suave);
+  margin-right: 2px;
+}
+
+.contador button {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--texto);
+  line-height: 1;
+}
+
+.contador button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.contador strong {
+  min-width: 26px;
+  text-align: center;
+}

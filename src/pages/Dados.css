@@ -1,0 +1,293 @@
+/* ---------- Selector de dados ---------- */
+.dados__selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.dado-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+.dado-boton .icono-dado {
+  width: 30px;
+  height: 30px;
+}
+
+.dado-boton--activo {
+  border-color: var(--dorado);
+  color: var(--dorado-claro);
+  background: var(--dorado-fondo);
+}
+
+.dado-boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Panel principal ---------- */
+.mesa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 16px 32px;
+  margin-bottom: 28px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(212, 166, 74, 0.16), transparent 60%),
+    var(--bg-panel);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.mesa__eyebrow {
+  color: var(--dorado);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.mesa__dado {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  margin: 12px 0;
+}
+
+.mesa__anillo {
+  position: absolute;
+  border: 1px solid rgba(212, 166, 74, 0.25);
+  border-radius: 50%;
+}
+
+.mesa__anillo--1 {
+  inset: 0;
+}
+
+.mesa__anillo--2 {
+  inset: -16px;
+  border-color: rgba(212, 166, 74, 0.12);
+}
+
+.mesa__icono {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  color: var(--dorado);
+  opacity: 0.85;
+}
+
+.mesa__numero {
+  position: relative;
+  font-family: var(--fuente-titulo);
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: var(--dorado-claro);
+}
+
+.mesa__dado--girando .mesa__icono {
+  animation: girar 1.2s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mesa__titulo {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mesa__sub {
+  min-height: 1.3em;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+.mesa__controles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin: 8px 0;
+}
+
+.boton-lanzar {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  background: var(--dorado);
+  border: none;
+  border-radius: 6px;
+  color: #1a1208;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.boton-lanzar:hover:not(:disabled) {
+  background: var(--dorado-claro);
+}
+
+.boton-lanzar:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Estados especiales */
+.mesa--critico {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(232, 199, 119, 0.3), transparent 62%),
+    var(--bg-panel);
+  border-color: var(--dorado);
+}
+
+.mesa--pifia {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(224, 122, 120, 0.2), transparent 62%),
+    var(--bg-panel);
+  border-color: rgba(224, 122, 120, 0.5);
+}
+
+.mesa--pifia .mesa__numero,
+.mesa--pifia .mesa__titulo {
+  color: var(--rojo);
+}
+
+.mesa--pifia .mesa__icono {
+  color: var(--rojo);
+}
+
+.mesa--pifia .mesa__anillo {
+  border-color: rgba(224, 122, 120, 0.3);
+}
+
+/* ---------- Historial ---------- */
+.historial__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.historial__cabecera h2 {
+  font-size: 1.1rem;
+}
+
+.historial__cabecera span {
+  color: var(--texto-tenue);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.historial__fila {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 70px;
+  padding: 10px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+}
+
+.ficha strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+}
+
+.ficha small {
+  color: var(--texto-tenue);
+  font-size: 0.65rem;
+}
+
+.ficha em {
+  font-size: 0.55rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ficha--vacia {
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-tenue);
+  opacity: 0.5;
+}
+
+.ficha--critico strong,
+.ficha--critico em {
+  color: var(--dorado-claro);
+}
+
+.ficha--critico {
+  border-color: rgba(212, 166, 74, 0.5);
+}
+
+.ficha--pifia strong,
+.ficha--pifia em {
+  color: var(--rojo);
+}
+
+.historial__pie {
+  margin-top: 16px;
+  color: var(--texto-tenue);
+  font-size: 0.75rem;
+}
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 768px) {
+  .dados__selector {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .mesa {
+    padding: 36px 24px 40px;
+  }
+
+  .mesa__dado {
+    width: 220px;
+    height: 220px;
+  }
+
+  .mesa__icono {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mesa__numero {
+    font-size: 4.2rem;
+  }
+
+  .mesa__titulo {
+    font-size: 1.3rem;
+  }
+
+  .ficha strong {
+    font-size: 1.7rem;
+  }
+}

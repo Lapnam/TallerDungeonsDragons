@@ -1,0 +1,48 @@
+.encabezado {
+  margin-bottom: 24px;
+}
+
+.encabezado__barra {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.encabezado__eyebrow {
+  color: var(--dorado);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.encabezado__edicion {
+  color: var(--texto-tenue);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.encabezado h1 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.encabezado__subtitulo {
+  margin-top: 6px;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .encabezado h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado__edicion {
+    display: none;
+  }
+}
