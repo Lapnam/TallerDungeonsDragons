@@ -56,7 +56,7 @@ img {
   max-width: 100%;
 }
 
-/* Los íconos de línea mantienen el mismo grosor sin importar su tamaño */
+
 .icono path,
 .icono-dado path,
 .icono-dado circle {

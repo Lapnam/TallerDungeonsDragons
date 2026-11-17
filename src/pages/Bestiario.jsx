@@ -37,7 +37,6 @@ function Bestiario() {
   const [error, setError] = useState("");
   const [seleccionado, setSeleccionado] = useState(null);
 
-  // 1. Cargar la lista (se repite cuando cambia el filtro de CR)
   useEffect(() => {
     let activo = true;
     setCargando(true);
@@ -61,7 +60,6 @@ function Bestiario() {
     };
   }, [cr]);
 
-  // 2. Filtrar por nombre y cortar la página actual
   const filtrados = lista.filter((m) =>
     m.name.toLowerCase().includes(busqueda.toLowerCase())
   );
@@ -69,7 +67,6 @@ function Bestiario() {
   const visibles = filtrados.slice((pagina - 1) * POR_PAGINA, pagina * POR_PAGINA);
   const clave = visibles.map((m) => m.index).join(",");
 
-  // 3. Pedir el detalle solo de los monstruos visibles que aún no tenemos
   useEffect(() => {
     const faltan = visibles.filter((m) => !detalles[m.index]);
     if (faltan.length === 0) return;
@@ -162,7 +159,7 @@ function Bestiario() {
         </div>
       )}
 
-      {/* Detalle del monstruo */}
+      {}
       {seleccionado && (
         <div className="modal" onClick={() => setSeleccionado(null)}>
           <div className="modal__caja" onClick={(e) => e.stopPropagation()}>

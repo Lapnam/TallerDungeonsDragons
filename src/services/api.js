@@ -1,6 +1,5 @@
 const BASE = "https://www.dnd5eapi.co";
 
-// Lista de monstruos (solo nombres). Si se pasa "cr", la API filtra por nivel de desafío.
 export async function getMonstruos(cr = "") {
   const url =
     cr === ""
@@ -13,19 +12,19 @@ export async function getMonstruos(cr = "") {
   return data.results;
 }
 
-// Detalle completo de un monstruo
+
 export async function getMonstruo(index) {
   const res = await fetch(`${BASE}/api/monsters/${index}`);
   if (!res.ok) throw new Error("No se pudo cargar el monstruo");
   return res.json();
 }
 
-// La API entrega la imagen como ruta relativa; la completamos
+
 export function urlImagen(ruta) {
   return ruta ? `${BASE}${ruta}` : null;
 }
 
-// Las listas completas se guardan para no pedirlas dos veces
+
 const cacheListas = {};
 
 async function getLista(endpoint) {
@@ -41,7 +40,7 @@ async function getLista(endpoint) {
 export const getListaEquipo = () => getLista("equipment");
 export const getListaMagicos = () => getLista("magic-items");
 
-// Detalle de cualquier elemento usando la url que trae la lista
+
 export async function getDetalle(url) {
   const res = await fetch(`${BASE}${url}`);
   if (!res.ok) throw new Error("No se pudo cargar el objeto");

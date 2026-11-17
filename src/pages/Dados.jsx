@@ -5,7 +5,7 @@ import { IconoDado } from "../components/Iconos";
 import { TIPOS_DADO, lanzarDado, lanzarVarios, notacion } from "../utils/dados";
 import "./Dados.css";
 
-// Crítico y pifia solo cuentan con un único d20 (el "natural")
+
 function tipoDeTirada(t) {
   if (t.caras === 20 && t.cantidad === 1) {
     if (t.tiradas[0] === 20) return "critico";
@@ -37,7 +37,7 @@ function Dados() {
       vueltas++;
 
       if (vueltas < 10) {
-        setNumeroGirando(lanzarDado(caras)); // solo efecto visual
+        setNumeroGirando(lanzarDado(caras)); 
       } else {
         clearInterval(intervalo.current);
 

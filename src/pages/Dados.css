@@ -1,4 +1,4 @@
-/* ---------- Selector de dados ---------- */
+
 .dados__selector {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -35,7 +35,7 @@
   cursor: not-allowed;
 }
 
-/* ---------- Panel principal ---------- */
+
 .mesa {
   display: flex;
   flex-direction: column;
@@ -151,7 +151,7 @@
   cursor: not-allowed;
 }
 
-/* Estados especiales */
+
 .mesa--critico {
   background:
     radial-gradient(ellipse at 50% 35%, rgba(232, 199, 119, 0.3), transparent 62%),
@@ -179,7 +179,7 @@
   border-color: rgba(224, 122, 120, 0.3);
 }
 
-/* ---------- Historial ---------- */
+
 .historial__cabecera {
   display: flex;
   justify-content: space-between;
@@ -259,7 +259,7 @@
   font-size: 0.75rem;
 }
 
-/* ---------- Escritorio ---------- */
+
 @media (min-width: 768px) {
   .dados__selector {
     grid-template-columns: repeat(7, 1fr);

@@ -8,7 +8,7 @@ function valorEnOro(detalle) {
   return detalle.cost.quantity * (VALOR_EN_ORO[detalle.cost.unit] ?? 0);
 }
 
-// Objetos normales (equipo). En niveles altos se quedan los más caros.
+
 async function elegirEquipo(cantidad, caro) {
   if (cantidad === 0) return [];
 
@@ -32,7 +32,7 @@ async function elegirEquipo(cantidad, caro) {
   }));
 }
 
-// Objetos mágicos: se piden de a 10 y se descartan los que no tengan la rareza del nivel
+
 async function elegirMagicos(cantidad, rarezas) {
   if (cantidad === 0) return [];
 
@@ -71,7 +71,6 @@ async function elegirMagicos(cantidad, rarezas) {
 export async function generarBotin(cr) {
   const nivel = obtenerNivel(cr);
 
-  // Cuántos objetos salen y cuántos de ellos son mágicos
   const total = entre(nivel.objetos[0], nivel.objetos[1]);
   let magicos = 0;
   for (let i = 0; i < total; i++) {

@@ -100,21 +100,21 @@
   opacity: 0.45;
 }
 
-/* ---------- Objetos ---------- */
+
 .botin__objetos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 14px;
 }
 
-/* Color según rareza */
+
 .stat--rareza-common .stat__valor { color: #cfcfcf; }
 .stat--rareza-uncommon .stat__valor { color: #6fd36f; }
 .stat--rareza-rare .stat__valor { color: #5aa9ff; }
 .stat--rareza-very-rare .stat__valor { color: #b97aff; }
 .stat--rareza-legendary .stat__valor { color: #ffa23a; }
 
-/* Los textos largos (como el tipo) deben partirse sin desbordar */
+
 .tarjeta--compacta .stat__valor {
   font-size: 0.95rem;
   text-align: center;
