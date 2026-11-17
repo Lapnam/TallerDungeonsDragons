@@ -72,7 +72,7 @@ function Botin() {
         <p className="botin__tipo">{obtenerNivel(cr).nombre}</p>
 
         <button className="botin__boton" onClick={generar} disabled={cargando}>
-          {cargando ? "Abriendo el cofre…" : "💰 Generar botín"}
+          {cargando ? "Abriendo el cofre…" : " Generar botín"}
         </button>
       </div>
 
